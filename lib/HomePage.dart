@@ -128,7 +128,7 @@ class _HomePageState extends State<HomePage> {
                   builder: (context) => new Container(
                     child: IconButton(
                       icon: Icon(Icons.location_on),
-                      color: Colors.red,
+                      color: Colors.blue,
                       iconSize: 45.0,
                       onPressed: () {
                         Route route = MaterialPageRoute(builder:(context) => PageImage());
