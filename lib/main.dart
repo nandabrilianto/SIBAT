@@ -37,7 +37,10 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return new Scaffold(
       body: new Center(
-        child: new Image.asset('images/sibat.png'),
+        child:Container(
+          margin: EdgeInsets.all(60.0),
+          child: new Image.asset('images/sibat.png'),
+        )
       ),
     );
   }
