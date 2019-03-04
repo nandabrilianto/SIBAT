@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong/latlong.dart';
@@ -7,6 +9,9 @@ import './Laporkan.dart';
 import './Info.dart';
 import './Video.dart';
 import './Berita.dart';
+import 'dart:async';
+import 'package:http/http.dart' as http;
+import './MapData.dart';
 
 // void main() {
 //   runApp(new MaterialApp(
@@ -23,16 +28,36 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  TextEditingController name = new TextEditingController();
-  TextEditingController longitude = new TextEditingController();
-  TextEditingController latitude = new TextEditingController();
+  Future<List<MapData>> mapDataList;
+  List<Marker> markerList;
+
+  @override
+  void initState() {
+    super.initState();
+    markerList = new List();
+    mapDataList = getMapData();
+  }
+
+  Future<List<MapData>> getMapData() async {
+    final response =
+        await http.get("https://www.sibatugm.org/api/get_data.php");
+    if (response.statusCode == 200) {
+      // If the call to the server was successful, parse the JSON
+      Iterable list = json.decode(response.body);
+      return list.map((model) => MapData.fromJson(model)).toList();
+    } else {
+      throw Exception('Failed to load post');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: new AppBar(
           backgroundColor: Colors.blue,
-          title: new Center(child: new Text("SIBAT"),),
+          title: new Center(
+            child: new Text("SIBAT"),
+          ),
         ),
         drawer: new Drawer(
           child: new ListView(
@@ -109,39 +134,48 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
-        body: new FlutterMap(
-            options: new MapOptions(
-                center: new LatLng(
-                  -8.1333515,
-                  110.553994,
-                ),
-                minZoom: 10.0),
-            layers: [
-              new TileLayerOptions(
-                  urlTemplate:
-                      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                  subdomains: ['a', 'b', 'c']),
-              new MarkerLayerOptions(markers: [
-                new Marker(
-                    width: 45.0,
-                    height: 45.0,
-                    point: new LatLng(-8.1333515, 110.553994),
-                    builder: (context) => new Container(
-                          child: IconButton(
-                            icon: Icon(Icons.location_on),
-                            color: Colors.blue,
-                            iconSize: 45.0,
-                            onPressed: () {
-                              Route route = MaterialPageRoute(
-                                  builder: (context) => PageImage());
-                              Navigator.push(context, route);
-                            },
-                          ),
-                        ))
-              ])
-            ])
-        // child: new Text("Home Page",style: new TextStyle(fontSize: 35.0),),
-        );
+        body: Center(
+          child: FutureBuilder<List<MapData>>(
+            future: mapDataList,
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.done) {
+                for (MapData mapData in snapshot.data) {
+                  markerList.add(new Marker(
+                      width: 45.0,
+                      height: 45.0,
+                      point: new LatLng(double.parse(mapData.latitude),
+                          double.parse(mapData.longitude)),
+                      builder: (context) => new Container(
+                            child: IconButton(
+                              icon: Icon(Icons.location_on),
+                              color: Colors.blue,
+                              iconSize: 45.0,
+                              onPressed: () {
+                                Route route = MaterialPageRoute(
+                                    builder: (context) => PageImage());
+                                Navigator.push(context, route);
+                              },
+                            ),
+                          )));
+                }
+                return FlutterMap(
+                    options: new MapOptions(
+                        center: new LatLng(
+                          -8.1333515,
+                          110.553994,
+                        ),
+                        minZoom: 10.0),
+                    layers: [
+                      new TileLayerOptions(
+                          urlTemplate:
+                              "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                          subdomains: ['a', 'b', 'c']),
+                      new MarkerLayerOptions(markers: markerList)
+                    ]);
+              }
+              return CircularProgressIndicator();
+            }))
+    );
   }
 }
 
