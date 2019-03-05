@@ -9,6 +9,7 @@ import './Laporkan.dart';
 import './Info.dart';
 import './Video.dart';
 import './Berita.dart';
+import './pageImage.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
 import './MapData.dart';
@@ -152,7 +153,7 @@ class _HomePageState extends State<HomePage> {
                               iconSize: 45.0,
                               onPressed: () {
                                 Route route = MaterialPageRoute(
-                                    builder: (context) => PageImage());
+                                    builder: (context) => pageImage());
                                 Navigator.push(context, route);
                               },
                             ),
@@ -179,13 +180,4 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class PageImage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Image'),
-      ),
-    );
-  }
-}
+
