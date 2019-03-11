@@ -153,7 +153,7 @@ class _HomePageState extends State<HomePage> {
                               iconSize: 45.0,
                               onPressed: () {
                                 Route route = MaterialPageRoute(
-                                    builder: (context) => pageImage());
+                                    builder: (context) => pageImage(pointId: mapData.id,));
                                 Navigator.push(context, route);
                               },
                             ),
