@@ -54,12 +54,26 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        appBar: new AppBar(
-          backgroundColor: Colors.blue,
-          title: new Center(
-            child: new Text("SIBAT"),
-          ),
-        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: new Builder(builder: (context) {
+          return new FloatingActionButton(
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+            child: new Icon(Icons.menu),
+          );
+        }),
+        bottomNavigationBar: new BottomAppBar(
+            child: new Container(
+          height: 40.0,
+          color: Colors.white,
+        )),
+        // appBar: new AppBar(
+        //   backgroundColor: Colors.blue,
+        //   title: new Center(
+        //     child: new Text("SIBAT"),
+        //   ),
+        // ),
         drawer: new Drawer(
           child: new ListView(
             children: <Widget>[
@@ -136,48 +150,47 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         body: Center(
-          child: FutureBuilder<List<MapData>>(
-            future: mapDataList,
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.done) {
-                for (MapData mapData in snapshot.data) {
-                  markerList.add(new Marker(
-                      width: 45.0,
-                      height: 45.0,
-                      point: new LatLng(double.parse(mapData.latitude),
-                          double.parse(mapData.longitude)),
-                      builder: (context) => new Container(
-                            child: IconButton(
-                              icon: Icon(Icons.location_on),
-                              color: Colors.blue,
-                              iconSize: 45.0,
-                              onPressed: () {
-                                Route route = MaterialPageRoute(
-                                    builder: (context) => pageImage(pointId: mapData.id,));
-                                Navigator.push(context, route);
-                              },
+            child: FutureBuilder<List<MapData>>(
+                future: mapDataList,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.done) {
+                    for (MapData mapData in snapshot.data) {
+                      markerList.add(new Marker(
+                          width: 45.0,
+                          height: 45.0,
+                          point: new LatLng(double.parse(mapData.latitude),
+                              double.parse(mapData.longitude)),
+                          builder: (context) => new Container(
+                                child: IconButton(
+                                  icon: Icon(Icons.location_on),
+                                  color: Colors.blue,
+                                  iconSize: 45.0,
+                                  onPressed: () {
+                                    Route route = MaterialPageRoute(
+                                        builder: (context) => pageImage(
+                                              pointId: mapData.id,
+                                            ));
+                                    Navigator.push(context, route);
+                                  },
+                                ),
+                              )));
+                    }
+                    return FlutterMap(
+                        options: new MapOptions(
+                            center: new LatLng(
+                              -8.1333515,
+                              110.553994,
                             ),
-                          )));
-                }
-                return FlutterMap(
-                    options: new MapOptions(
-                        center: new LatLng(
-                          -8.1333515,
-                          110.553994,
-                        ),
-                        minZoom: 10.0),
-                    layers: [
-                      new TileLayerOptions(
-                          urlTemplate:
-                              "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                          subdomains: ['a', 'b', 'c']),
-                      new MarkerLayerOptions(markers: markerList)
-                    ]);
-              }
-              return CircularProgressIndicator();
-            }))
-    );
+                            minZoom: 10.0),
+                        layers: [
+                          new TileLayerOptions(
+                              urlTemplate:
+                                  "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                              subdomains: ['a', 'b', 'c']),
+                          new MarkerLayerOptions(markers: markerList)
+                        ]);
+                  }
+                  return CircularProgressIndicator();
+                })));
   }
 }
-
-
