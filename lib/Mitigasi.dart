@@ -28,7 +28,7 @@ class _MitigasiState extends State<Mitigasi> {
             ),
 
               new Text(
-              "Mitigasi adalah segala tindakan yang dilakukan untuk mengurangi atau menghilangkan resiko jangka panjang bahaya bencana alam dan akibatnya terhadap manusia dan harta-benda. Berdasarkan Peraturan Pemerintah (PP) No. 64 tahun 2010 Pasal 1 (4) yang dimaksud Mitigasi Bencana adalah upaya untuk mengurangi risiko bencana, baik secara struktur atau fisik melalui pembangunan fisik alami dan/atau buatan maupun nonstruktur atau nonfisik melalui peningkatan kemampuan menghadapi ancaman bencana di wilayah pesisir dan pulau – pulau kecil. \n"
+              "Mitigasi adalah segala tindakan yang dilakukan untuk mengurangi atau menghilangkan risiko jangka panjang bahaya bencana alam dan akibatnya terhadap manusia dan harta benda. Berdasarkan Peraturan Pemerintah (PP) No. 64 tahun 2010 Pasal 1 (4) yang dimaksud Mitigasi Bencana adalah upaya untuk mengurangi risiko bencana, baik secara struktur atau fisik melalui pembangunan fisik alami dan/atau buatan maupun nonstruktur atau nonfisik melalui peningkatan kemampuan menghadapi ancaman bencana di wilayah pesisir dan pulau – pulau kecil. \n"
               ,textAlign: TextAlign.left,
               style: new TextStyle(fontSize: 15.0),
             ),
@@ -39,16 +39,18 @@ class _MitigasiState extends State<Mitigasi> {
               style: new TextStyle(fontSize: 20.0),
             ),
 
-            new Text("1.Penyusunan peraturan perundang-undangan; \n 2. Penyusunan peta rawan bencana; \n 3.Penyusunan peta risiko bencana; \n 4.Penyusunan analisis mengenai dampak lingkungan (amdal); \n 5.Penyusunan tata ruang; \n 6.Penyusunan zonasi; \n 7.Pendidikan, penyuluhan, dan penyadaran masyarakat \n", 
+            new Text("1.Penyusunan peraturan perundang-undangan\n2. Penyusunan peta rawan bencana\n3.Penyusunan peta risiko bencana\n4.Penyusunan analisis mengenai dampak lingkungan (amdal)\n5.Penyusunan tata ruang\n6.Penyusunan zonasi\n7.Pendidikan, penyuluhan, dan penyadaran masyarakat\n", 
             textAlign: TextAlign.left,
             style: new TextStyle(fontSize: 15.0),
             ),
 
-            new Text("Langkah-langkah yang harus dilakukan sebelum terjadinya tsunami adalah sebagai berikut: \n",textAlign: TextAlign.left,
+            new Text("Langkah-langkah yang harus dilakukan sebelum terjadinya tsunami adalah sebagai berikut: \n"
+            ,textAlign: TextAlign.left,
             style: new TextStyle(fontSize: 20.0),
             ),
 
-            new Text("1. Membangun sistem peringatan dini tsunami \n 2. Membangun shelter atau tempat evakuasi disekitar wilayah rawan tsunami \n 3. Meningkatkan pengetahuan masyarakat seputar bahaya tsunami \n 4. Melakukan pelaporan secara cepat jika ada tanda-tanda akan terjadi tsunami \n 5. Aktif mencari informasi seputar bencana melalui media informasi (radio, TV, internet) \n 6. Sedia dan siaga alat komunikasi alternative jika ponsel tidak berfungsi.",textAlign: TextAlign.left,
+            new Text("1. Membangun sistem peringatan dini tsunami\n2. Membangun shelter atau tempat evakuasi disekitar wilayah rawan tsunami\n3. Meningkatkan pengetahuan masyarakat seputar bahaya tsunami\n4. Melakukan pelaporan secara cepat jika ada tanda-tanda akan terjadi tsunami\n5. Aktif mencari informasi seputar bencana melalui media informasi (radio, TV, internet)\n6. Sedia dan siaga alat komunikasi alternative jika ponsel tidak berfungsi."
+            ,textAlign: TextAlign.left,
             style: new TextStyle(fontSize: 15.0),
             ),
 
