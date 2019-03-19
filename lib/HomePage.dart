@@ -78,8 +78,8 @@ class _HomePageState extends State<HomePage> {
           child: new ListView(
             children: <Widget>[
               new ListTile(
-                trailing: new Icon(Icons.home),
-                title: new Text("Beranda"),
+                trailing: new Icon(Icons.map),
+                title: new Text("Peta"),
                 onTap: () {
                   Route route =
                       MaterialPageRoute(builder: (context) => HomePage());
