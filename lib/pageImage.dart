@@ -57,7 +57,7 @@ void _nextImage(){
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('Image'),
+        title: new Text('Gambar'),
         centerTitle: true,
       ),
       body: Column(
@@ -103,14 +103,14 @@ void _nextImage(){
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               RaisedButton(
-                child: Text('Prev'),
+                child: Text('Mundur', style: TextStyle(color: Colors.white),),
                 onPressed: _previousImage,
                 elevation: 5.0,
                 color: Colors.blue,
               ),
               SizedBox(width: 10.0),
               RaisedButton(
-                child: Text('Next'),
+                child: Text('Maju', style: TextStyle(color: Colors.white),),
                 onPressed: _nextImage,
                 elevation: 5.0,
                 color: Colors.blue,
