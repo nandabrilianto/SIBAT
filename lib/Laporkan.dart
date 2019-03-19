@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
-
 
 class Laporkan extends StatelessWidget {
   @override
@@ -47,7 +45,6 @@ class Laporkan extends StatelessWidget {
           
         ],
       ),
-      
     );
   }
 }
@@ -61,7 +58,7 @@ class ListKontak extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: new EdgeInsets.all(40.0),
+      padding: new EdgeInsets.all(25.0),
       child: new Center(
         child: new Row(
           children: <Widget>[
@@ -70,21 +67,22 @@ class ListKontak extends StatelessWidget {
               width: 80.0,
             ),
             new Container(
-              child: new Center(
+              padding: new EdgeInsets.only(left: 40.0),
+              // child: new Center(
                 child: new Column(
                 children: <Widget>[
                   new Text(
                     judul,
-                    style: new TextStyle(fontSize: 20.0), 
+                    style: new TextStyle(fontSize: 17.0), 
                   ),
 
                   new Text(
                     nomor,
-                    style: new TextStyle(fontSize: 17.0),
+                    style: new TextStyle(fontSize: 14.0),
                   )
                 ],
               )),
-            )
+            // )
           ],
         ),
       ),
