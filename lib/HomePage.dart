@@ -6,6 +6,7 @@ import 'package:latlong/latlong.dart';
 import './Mitigasi.dart';
 import './Tahapanevakuasi.dart';
 import './Laporkan.dart';
+import './Laporkan2.dart';
 import './Info.dart';
 import './Video.dart';
 import './Berita.dart';
@@ -112,7 +113,7 @@ class _HomePageState extends State<HomePage> {
                 trailing: new Icon(Icons.announcement),
                 onTap: () {
                   Route route =
-                      MaterialPageRoute(builder: (context) => Laporkan());
+                      MaterialPageRoute(builder: (context) => Laporkan2());
                   Navigator.push(context, route);
                 },
               ),
