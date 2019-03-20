@@ -26,9 +26,9 @@ class _Laporkan2State extends State<Laporkan2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.blue,
       appBar: new AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.blue,
         elevation: 0.0,
         title: new Text("Laporkan"),
       ),
