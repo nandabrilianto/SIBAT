@@ -8,8 +8,11 @@ class Video extends StatefulWidget {
 class _VideoState extends State<Video> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(title: new Text("Video"),),
+                return new Scaffold(
+                  appBar: new AppBar(title: new Text("Video"),
+                  ),
     ); 
     }
 }
+
+

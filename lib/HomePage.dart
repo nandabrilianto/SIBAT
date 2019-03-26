@@ -117,15 +117,15 @@ class _HomePageState extends State<HomePage> {
                   Navigator.push(context, route);
                 },
               ),
-              new Divider(),
-              new ListTile(
-                title: new Text("Info"),
-                trailing: new Icon(Icons.info),
-                onTap: () {
-                  Route route = MaterialPageRoute(builder: (context) => Info());
-                  Navigator.push(context, route);
-                },
-              ),
+              // new Divider(),
+              // new ListTile(
+              //   title: new Text("Info"),
+              //   trailing: new Icon(Icons.info),
+              //   onTap: () {
+              //     Route route = MaterialPageRoute(builder: (context) => Info());
+              //     Navigator.push(context, route);
+              //   },
+              // ),
               new Divider(),
               new ListTile(
                 title: new Text("Video"),

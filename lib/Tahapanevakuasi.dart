@@ -34,7 +34,7 @@ class _TahapanevakuasiState extends State<Tahapanevakuasi> {
             ),
 
             new Text(
-              "\nHal-hal yang perlu diperhatikan setelah terjadi tsunami adalah sebagai berikut:",
+              "\n\nHal-hal yang perlu diperhatikan setelah terjadi tsunami adalah sebagai berikut:",
               textAlign: TextAlign.left,
               style: new TextStyle(fontSize: 20.0),
             ),
