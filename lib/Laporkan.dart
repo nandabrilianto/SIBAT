@@ -1,89 +1,85 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class Laporkan extends StatelessWidget {
+class Laporkan extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("Laporkan"),
-      ),
-      body: 
-      new ListView(
-        children: <Widget>[
-          new ListKontak(
-            gambar:
-                "https://www.sibatugm.org/wp-content/uploads/2018/09/iconPmi.png",
-            judul: "PMI Gunung Kidul",
-            nomor: "0274 394500 | 391233",
-          ),
-          new ListKontak(
-            gambar:
-                "https://www.sibatugm.org/wp-content/uploads/2018/09/iconDamkarGunungKidul.jpg",
-            judul: "Damkar Gunung Kidul",
-            nomor: "0274 587101",
-          ),
-          new ListKontak(
-            gambar:
-                "https://www.sibatugm.org/wp-content/uploads/2018/09/iconBPBDGunungKidul.jpg",
-            judul: "BPBD Gunung Kidul",
-            nomor: "0274 394091",
-            
-          ),
-          new ListKontak(
-            gambar:
-                "https://www.sibatugm.org/wp-content/uploads/2018/09/iconSarGunungKidul.png",
-            judul: "SAR Gunung Kidul",
-            nomor: "0274 563231 | 562811",
-          ),
-
-          new ListKontak(
-            gambar:
-                "https://www.sibatugm.org/wp-content/uploads/2018/09/iconPemerintahGunungKidul.png",
-            judul: "Pemkab Gunung Kidul",
-            nomor: "0274 391761",
-          ),
-          
-        ],
-      ),
-    );
-  }
+  _LaporkanState createState() => _LaporkanState();
 }
 
-class ListKontak extends StatelessWidget {
-  ListKontak({this.gambar, this.judul, this.nomor});
-  final String gambar;
-  final String judul;
-  final String nomor;
+class _LaporkanState extends State<Laporkan> {
+  final List<String> logo = [
+    "images/iconPmi.png",
+    "images/iconDamkarGunungKidul.png",
+    "images/iconBPBDGunungKidul.png",
+    "images/iconSarGunungKidul.png",
+    "images/iconPemerintahGunungKidul.png"
+  ];
+
+  final List<String> telephone = [
+    "tel://0274394500",
+    "tel://0274587101",
+    "tel://0274394091",
+    "tel://0274563231",
+    "tel://0274391761"
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: new EdgeInsets.all(25.0),
-      child: new Center(
-        child: new Row(
-          children: <Widget>[
-            new Image(
-              image: new NetworkImage(gambar),
-              width: 80.0,
-            ),
-            new Container(
-              padding: new EdgeInsets.only(left: 40.0),
-              // child: new Center(
-                child: new Column(
-                children: <Widget>[
-                  new Text(
-                    judul,
-                    style: new TextStyle(fontSize: 17.0), 
-                  ),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: new AppBar(
+        backgroundColor: Colors.blue,
+        elevation: 0.0,
+        title: new Text("Laporkan"),
+      ),
+      body: new Container(
+        // decoration: new BoxDecoration(
+        //     image: DecorationImage(
+        //   image: AssetImage('images/wave.jpg'),
+        //   fit: BoxFit.cover,
+        // )),
+        child: new PageView.builder(
+          controller: new PageController(viewportFraction: 0.8),
+          itemCount: logo.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
+              padding:
+                  new EdgeInsets.symmetric(horizontal: 10.0, vertical: 128.0),
+              child: Material(
+                type: MaterialType.transparency,
+                elevation: 8.0,
+                child: new Stack(
+                  fit: StackFit.expand,
+                  children: <Widget>[
+                    Center(
+                      child: new Hero(
+                        tag: logo[index],
+                        child: new SizedBox(
+                          width: 220.0,
+                          height: 220.0,
+                          child: new Material(
+                            child: new InkWell(
+                              onTap: () => launch(telephone[index]),
+                              child: new Image.asset(
+                                logo[index],
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
 
-                  new Text(
-                    nomor,
-                    style: new TextStyle(fontSize: 14.0),
-                  )
-                ],
-              )),
-            // )
-          ],
+                    Text(
+                      'PMI',
+                      style: TextStyle(fontSize: 16.0),
+                    ),
+
+                  ],
+                ),
+              ),
+            );
+          },
         ),
       ),
     );
