@@ -23,10 +23,18 @@ class _LaporkanState extends State<Laporkan> {
     "tel://0274391761"
   ];
 
+  final List<String> nama = [
+    "PMI",
+    "Pemadam Kebakaran Gunung Kidul",
+    "BPDB Gunung Kidul",
+    "SAR Gunung Kidul",
+    "Pemerintah Gunung Kidul"
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.white,
       appBar: new AppBar(
         backgroundColor: Colors.blue,
         elevation: 0.0,
@@ -69,12 +77,11 @@ class _LaporkanState extends State<Laporkan> {
                         ),
                       ),
                     ),
-
                     Text(
-                      'PMI',
-                      style: TextStyle(fontSize: 16.0),
+                      nama[index],
+                      style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.center,
                     ),
-
                   ],
                 ),
               ),
