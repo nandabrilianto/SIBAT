@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Laporkan extends StatefulWidget {
+class Laporkan extends StatefulWidget{
   @override
   _LaporkanState createState() => _LaporkanState();
 }
@@ -55,7 +55,7 @@ class _LaporkanState extends State<Laporkan> {
                   new EdgeInsets.symmetric(horizontal: 10.0, vertical: 128.0),
               child: Material(
                 type: MaterialType.transparency,
-                elevation: 8.0,
+                elevation: 20.0,
                 child: new Stack(
                   fit: StackFit.expand,
                   children: <Widget>[
@@ -72,16 +72,16 @@ class _LaporkanState extends State<Laporkan> {
                                 logo[index],
                                 fit: BoxFit.fill,
                               ),
-                            ),
+                              ),
                           ),
                         ),
                       ),
                     ),
-                    Text(
-                      nama[index],
-                      style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.center,
-                    ),
+                    // Text(
+                    //   nama[index],
+                    //   style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
+                    //   textAlign: TextAlign.center,
+                    // ),
                   ],
                 ),
               ),
