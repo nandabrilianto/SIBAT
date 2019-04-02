@@ -21,6 +21,7 @@ class _VideoState extends State<Video> {
               Text(
                 'Prakata Kepala BPBD Gunung Kidul DIY untuk Tim SIBAT',
                 style: TextStyle(fontSize: 16.0),
+                textAlign: TextAlign.center,
               ),
 
               FluTube(
@@ -33,6 +34,7 @@ class _VideoState extends State<Video> {
               Text(
                 'Dokumentasi Kegiatan dan Training Tim SIBAT',
                 style: TextStyle(fontSize: 16.0),
+                textAlign: TextAlign.center,
               ),
               FluTube(
                 'https://youtu.be/xN_xFHKWpio',
@@ -44,6 +46,7 @@ class _VideoState extends State<Video> {
               Text(
                 'Simulasi Peringatan Dini Gempa dan Tsunami Televisi Indonesia',
                 style: TextStyle(fontSize: 16.0),
+                textAlign: TextAlign.center,
               ),
               FluTube(
                 'https://youtu.be/PwW4bGJI5dQ',
@@ -55,6 +58,7 @@ class _VideoState extends State<Video> {
               Text(
                 'Peringatan Dini Bencana Tsunami – GITNEWS ',
                 style: TextStyle(fontSize: 16.0),
+                textAlign: TextAlign.center,
               ),
               FluTube(
                 'https://youtu.be/KlYE_RKPkW8',
@@ -66,6 +70,7 @@ class _VideoState extends State<Video> {
               Text(
                 'Prosedur Diseminasi Peringatan Dini Tsunami Pusdalops BPBD Kab. Bantul',
                 style: TextStyle(fontSize: 16.0),
+                textAlign: TextAlign.center,
               ),
               FluTube(
                 'https://youtu.be/i_LxiGKsCjA',
@@ -77,6 +82,7 @@ class _VideoState extends State<Video> {
               Text(
                 'Jangan Berenang Di Pantai Jika Melihat Ombak Seperti Ini',
                 style: TextStyle(fontSize: 16.0),
+                textAlign: TextAlign.center,
               ),
               FluTube(
                 'https://youtu.be/nUGM2_FXFtE',
@@ -88,6 +94,7 @@ class _VideoState extends State<Video> {
               Text(
                 '#1 Tsunami Preparedness',
                 style: TextStyle(fontSize: 16.0),
+                textAlign: TextAlign.center,
               ),
               FluTube(
                 'https://youtu.be/bleBYigKuKY',
@@ -99,6 +106,7 @@ class _VideoState extends State<Video> {
               Text(
                 '#2 Tsunami Early Warning System',
                 style: TextStyle(fontSize: 16.0),
+                textAlign: TextAlign.center,
               ),
               FluTube(
                 'https://youtu.be/HsjPJdUsero',
@@ -110,6 +118,7 @@ class _VideoState extends State<Video> {
               Text(
                 '#3 Tsunami Evacuation',
                 style: TextStyle(fontSize: 16.0),
+                textAlign: TextAlign.center,
               ),
               FluTube(
                 'https://youtu.be/fFl-S5iQ8Gk',
@@ -121,6 +130,7 @@ class _VideoState extends State<Video> {
               Text(
                 '#4 Tsunami Survival Strategy',
                 style: TextStyle(fontSize: 16.0),
+                textAlign: TextAlign.center,
               ),
               FluTube(
                 'https://youtu.be/d3OGiPrbfqU',
