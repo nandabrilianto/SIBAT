@@ -28,7 +28,7 @@ class _BeritaState extends State<Berita> with SingleTickerProviderStateMixin {
       appBar: new AppBar(
           centerTitle: true,
           title: new Text(
-            "Berita",
+            "Berita Gempa Bumi",
             style: TextStyle(
                 fontFamily: 'Montserrat',
                 fontWeight: FontWeight.bold,

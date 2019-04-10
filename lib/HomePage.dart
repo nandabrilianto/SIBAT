@@ -30,6 +30,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  
   Future<List<MapData>> mapDataList;
   List<Marker> markerList;
 
@@ -59,10 +60,14 @@ class _HomePageState extends State<HomePage> {
         // floatingActionButton: new Builder(builder: (context) {
         //   return new FloatingActionButton(
         //     onPressed: () {
-        //       Scaffold.of(context).openDrawer();
-        //     },
-        //     child: new Icon(Icons.menu),
+        //             Route route =
+        //                 MaterialPageRoute(builder: (context) => Berita());
+        //             Navigator.push(context, route);
+        //           },
+        //     child: new Icon(Icons.new_releases),
         //   );
+
+          
         // }),
         // bottomNavigationBar: new BottomAppBar(
         //     child: new Container(
@@ -118,7 +123,7 @@ class _HomePageState extends State<HomePage> {
                 new Divider(color: Colors.white,),
                 new ListTile(
                   title: new Text("Laporkan", style: Style.headerTextStyle,),
-                  trailing: new Icon(Icons.announcement, color: Colors.white,),
+                  trailing: new Icon(Icons.call, color: Colors.white,),
                   onTap: () {
                     Route route =
                         MaterialPageRoute(builder: (context) => Laporkan());
@@ -147,7 +152,7 @@ class _HomePageState extends State<HomePage> {
                 new Divider( color: Colors.white,),
                 new ListTile(
                   title: new Text("Berita", style: Style.headerTextStyle,),
-                  trailing: new Icon(Icons.import_contacts, color: Colors.white,),
+                  trailing: new Icon(Icons.new_releases, color: Colors.white,),
                   onTap: () {
                     Route route =
                         MaterialPageRoute(builder: (context) => Berita());
@@ -201,6 +206,7 @@ class _HomePageState extends State<HomePage> {
                         ]);
                   }
                   return CircularProgressIndicator();
-                })));
+                }))
+                );
   }
 }

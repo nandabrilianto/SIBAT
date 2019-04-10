@@ -23,8 +23,8 @@ class _TahapanevakuasiState extends State<Tahapanevakuasi> {
               
               new Text(
               "Tahapan Evakuasi Tsunami\n",
-              textAlign: TextAlign.left,
-              style: new TextStyle(fontSize: 25.0),
+               textAlign: TextAlign.center,
+                style: new TextStyle(fontSize: 46.0, fontFamily: 'Montserrat', letterSpacing: 1.0, fontWeight: FontWeight.bold),  
             ),
 
             new Text(
