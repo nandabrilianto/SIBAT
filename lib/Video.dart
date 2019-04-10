@@ -11,7 +11,14 @@ class _VideoState extends State<Video> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("Video"),
+        centerTitle: true,
+        title: new Text(
+          "Video",
+          style: TextStyle(
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.bold,
+                color: Colors.white),
+          ),
       ),
       body: new Container(
         margin: EdgeInsets.all(20.0),

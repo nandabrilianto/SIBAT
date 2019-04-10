@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './textstyle.dart';
 
 class Tsunami extends StatelessWidget{
   @override
@@ -7,7 +8,7 @@ class Tsunami extends StatelessWidget{
       child: new Center(
         child: new Column(
           children: <Widget>[
-            new Text("Berpotensi tsunami", style: new TextStyle(fontSize: 15.0),),
+            new Text("Berpotensi tsunami", style: Style.headerTextStyle,),
             new Padding(padding: new EdgeInsets.all(20.0),),
           ],
         ),

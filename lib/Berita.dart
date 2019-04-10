@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './Tsunami.dart' as tsunami;
 import './Nontsunami.dart' as nontsunami;
+
 class Berita extends StatefulWidget {
   @override
   _BeritaState createState() => _BeritaState();
@@ -16,29 +17,39 @@ class _BeritaState extends State<Berita> with SingleTickerProviderStateMixin {
   }
 
   @override
-  void dispose(){
+  void dispose() {
     controller.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(title: new Text("Berita"),
-      bottom: new TabBar( controller:controller,
-      tabs: <Widget>[
-        new Tab(icon: new Text('Berpotensi tsunami'), ),
-        new Tab(icon: new Text('Tidak berpotensi tsunami', textAlign: TextAlign. center),)
-      ]
-      )
-      ),
-
+      appBar: new AppBar(
+          centerTitle: true,
+          title: new Text(
+            "Berita",
+            style: TextStyle(
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.bold,
+                color: Colors.white),
+          ),
+          bottom: new TabBar(controller: controller, tabs: <Widget>[
+            new Tab(
+              icon: new Text('Berpotensi tsunami'),
+            ),
+            new Tab(
+              icon: new Text('Tidak berpotensi tsunami',
+                  textAlign: TextAlign.center),
+            )
+          ])),
       body: new TabBarView(
         controller: controller,
         children: <Widget>[
-      new tsunami.Tsunami(),
-      new nontsunami.Nontsunami(),
+          new tsunami.Tsunami(),
+          new nontsunami.Nontsunami(),
         ],
-        ),
-    ); 
-    }
+      ),
+    );
+  }
 }

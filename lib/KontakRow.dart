@@ -44,7 +44,7 @@ class KontakRow extends StatelessWidget {
             margin: new EdgeInsets.symmetric(vertical: 8.0),
             height: 2.0,
             width: 18.0,
-            color: new Color(0xff00c6ff)
+            color: Colors.redAccent
           ),
         ],
       ),
@@ -55,7 +55,7 @@ class KontakRow extends StatelessWidget {
      height: 145.0,
      margin: new EdgeInsets.only(left: 46.0),
      decoration: new BoxDecoration(
-       color: Colors.white,
+       color: Colors.black,
        shape: BoxShape.rectangle,
        borderRadius: new BorderRadius.circular(8.0),
        boxShadow: <BoxShadow>[
@@ -71,13 +71,14 @@ class KontakRow extends StatelessWidget {
 
     
     return new Material(
+      color: Colors.blue,
 
       child: new InkWell(
 
         onTap: () => launch(kontak.telephone),
 
         child: new Container(
-
+        color: Colors.transparent,
         margin: const EdgeInsets.symmetric(
         vertical: 16.0,
         horizontal: 24.0,

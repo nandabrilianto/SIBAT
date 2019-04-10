@@ -13,6 +13,7 @@ import './pageImage.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
 import './MapData.dart';
+import './textstyle.dart';
 
 // void main() {
 //   runApp(new MaterialApp(
@@ -68,87 +69,94 @@ class _HomePageState extends State<HomePage> {
         //   height: 40.0,
         //   color: Colors.white,
         // )),
-        
+
         appBar: new AppBar(
           backgroundColor: Colors.blue,
-          title: new Center(
-            child: new Text("SIBAT"),
+          centerTitle: true,
+          title: new Text(
+            'SIBAT',
+            style: TextStyle(
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.bold,
+                color: Colors.white),
           ),
         ),
-
         drawer: new Drawer(
-          child: new ListView(
-            children: <Widget>[
-              new ListTile(
-                trailing: new Icon(Icons.map),
-                title: new Text("Peta"),
-                onTap: () {
-                  Route route =
-                      MaterialPageRoute(builder: (context) => HomePage());
-                  Navigator.push(context, route);
-                },
-              ),
-              new Divider(),
-              new ListTile(
-                title: new Text("Mitigasi Tsunami"),
-                trailing: new Icon(Icons.rowing),
-                onTap: () {
-                  Route route =
-                      MaterialPageRoute(builder: (context) => Mitigasi());
-                  Navigator.push(context, route);
-                },
-              ),
-              new Divider(),
-              new ListTile(
-                title: new Text("Tahapan Evakuasi"),
-                trailing: new Icon(Icons.directions_run),
-                onTap: () {
-                  Route route = MaterialPageRoute(
-                      builder: (context) => Tahapanevakuasi());
-                  Navigator.push(context, route);
-                },
-              ),
-              new Divider(),
-              new ListTile(
-                title: new Text("Laporkan"),
-                trailing: new Icon(Icons.announcement),
-                onTap: () {
-                  Route route =
-                      MaterialPageRoute(builder: (context) => Laporkan());
-                  Navigator.push(context, route);
-                },
-              ),
-              // new Divider(),
-              // new ListTile(
-              //   title: new Text("Info"),
-              //   trailing: new Icon(Icons.info),
-              //   onTap: () {
-              //     Route route = MaterialPageRoute(builder: (context) => Info());
-              //     Navigator.push(context, route);
-              //   },
-              // ),
-              new Divider(),
-              new ListTile(
-                title: new Text("Video"),
-                trailing: new Icon(Icons.videocam),
-                onTap: () {
-                  Route route =
-                      MaterialPageRoute(builder: (context) => Video());
-                  Navigator.push(context, route);
-                },
-              ),
-              new Divider(),
-              new ListTile(
-                title: new Text("Berita"),
-                trailing: new Icon(Icons.import_contacts),
-                onTap: () {
-                  Route route =
-                      MaterialPageRoute(builder: (context) => Berita());
-                  Navigator.push(context, route);
-                },
-              ),
-              new Divider(),
-            ],
+          child: Container(
+            color: Colors.blue,
+            child: new ListView(
+              children: <Widget>[
+                new ListTile(
+                  trailing: new Icon(Icons.map, color: Colors.white,),
+                  title: new Text("Peta", style: Style.headerTextStyle,),
+                  onTap: () {
+                    Route route =
+                        MaterialPageRoute(builder: (context) => HomePage());
+                    Navigator.push(context, route);
+                  },
+                ),
+                new Divider(color: Colors.white,),
+                new ListTile(
+                  title: new Text("Mitigasi Tsunami", style: Style.headerTextStyle,),
+                  trailing: new Icon(Icons.rowing, color: Colors.white,),
+                  onTap: () {
+                    Route route =
+                        MaterialPageRoute(builder: (context) => Mitigasi());
+                    Navigator.push(context, route);
+                  },
+                ),
+                new Divider(color: Colors.white,),
+                new ListTile(
+                  title: new Text("Tahapan Evakuasi", style: Style.headerTextStyle,),
+                  trailing: new Icon(Icons.directions_run, color: Colors.white,),
+                  onTap: () {
+                    Route route = MaterialPageRoute(
+                        builder: (context) => Tahapanevakuasi());
+                    Navigator.push(context, route);
+                  },
+                ),
+                new Divider(color: Colors.white,),
+                new ListTile(
+                  title: new Text("Laporkan", style: Style.headerTextStyle,),
+                  trailing: new Icon(Icons.announcement, color: Colors.white,),
+                  onTap: () {
+                    Route route =
+                        MaterialPageRoute(builder: (context) => Laporkan());
+                    Navigator.push(context, route);
+                  },
+                ),
+                // new Divider(),
+                // new ListTile(
+                //   title: new Text("Info"),
+                //   trailing: new Icon(Icons.info),
+                //   onTap: () {
+                //     Route route = MaterialPageRoute(builder: (context) => Info());
+                //     Navigator.push(context, route);
+                //   },
+                // ),
+                new Divider(color: Colors.white,),
+                new ListTile(
+                  title: new Text("Video", style: Style.headerTextStyle,),
+                  trailing: new Icon(Icons.videocam,color: Colors.white,),
+                  onTap: () {
+                    Route route =
+                        MaterialPageRoute(builder: (context) => Video());
+                    Navigator.push(context, route);
+                  },
+                ),
+                new Divider( color: Colors.white,),
+                new ListTile(
+                  title: new Text("Berita", style: Style.headerTextStyle,),
+                  trailing: new Icon(Icons.import_contacts, color: Colors.white,),
+                  onTap: () {
+                    Route route =
+                        MaterialPageRoute(builder: (context) => Berita());
+                    Navigator.push(context, route);
+                  },
+                ),
+                new Divider(color: Colors.white,),
+              ],
+            ),
           ),
         ),
         body: Center(
