@@ -29,7 +29,7 @@ class _LaporkanState extends State<Laporkan> {
     "Pemadam Kebakaran Gunung Kidul",
     "BPDB Gunung Kidul",
     "SAR Gunung Kidul",
-    "Pemerintah Gunung Kidul"
+    "Pemerintah Kabupaten Gunung Kidul"
   ];
 
   @override

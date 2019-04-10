@@ -54,26 +54,28 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        floatingActionButton: new Builder(builder: (context) {
-          return new FloatingActionButton(
-            onPressed: () {
-              Scaffold.of(context).openDrawer();
-            },
-            child: new Icon(Icons.menu),
-          );
-        }),
-        bottomNavigationBar: new BottomAppBar(
-            child: new Container(
-          height: 40.0,
-          color: Colors.white,
-        )),
-        // appBar: new AppBar(
-        //   backgroundColor: Colors.blue,
-        //   title: new Center(
-        //     child: new Text("SIBAT"),
-        //   ),
-        // ),
+        // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        // floatingActionButton: new Builder(builder: (context) {
+        //   return new FloatingActionButton(
+        //     onPressed: () {
+        //       Scaffold.of(context).openDrawer();
+        //     },
+        //     child: new Icon(Icons.menu),
+        //   );
+        // }),
+        // bottomNavigationBar: new BottomAppBar(
+        //     child: new Container(
+        //   height: 40.0,
+        //   color: Colors.white,
+        // )),
+        
+        appBar: new AppBar(
+          backgroundColor: Colors.blue,
+          title: new Center(
+            child: new Text("SIBAT"),
+          ),
+        ),
+
         drawer: new Drawer(
           child: new ListView(
             children: <Widget>[

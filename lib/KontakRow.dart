@@ -1,42 +1,42 @@
 import 'package:flutter/material.dart';
-import './Planets.dart';
+import './Kontak.dart';
 import './separator.dart';
 import './textstyle.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class PlanetRow extends StatelessWidget {
+class KontakRow extends StatelessWidget {
 
-  final Planet planet;
+  final Kontak kontak;
  
-  PlanetRow(this.planet);
+  KontakRow(this.kontak);
 
   @override
   Widget build(BuildContext context) {
 
-    final planetThumbnail = new Container(
+    final kontakThumbnail = new Container(
      margin: new EdgeInsets.symmetric(
        vertical: 16.0
      ),
      alignment: FractionalOffset.centerLeft,
      child: new Image(
-       image: new AssetImage(planet.image),
+       image: new AssetImage(kontak.image),
        height: 92.0,
        width: 92.0,
     ),
   );
 
-  final planetCardContent = new Container(
+  final kontakCardContent = new Container(
       margin: new EdgeInsets.fromLTRB(76.0, 16.0, 16.0, 16.0),
       constraints: new BoxConstraints.expand(),
       child: new Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           new Container(height: 4.0),
-          new Text(planet.name,
+          new Text(kontak.name,
             style: Style.headerTextStyle,
           ),
           new Container(height: 10.0),
-          new Text(planet.location,
+          new Text(kontak.location,
             style: Style.commonTextStyle
 
           ),
@@ -50,9 +50,9 @@ class PlanetRow extends StatelessWidget {
       ),
     );
 
-  final planetCard = new Container(
-    child: planetCardContent,
-     height: 124.0,
+  final kontakCard = new Container(
+    child: kontakCardContent,
+     height: 145.0,
      margin: new EdgeInsets.only(left: 46.0),
      decoration: new BoxDecoration(
        color: Colors.white,
@@ -74,7 +74,7 @@ class PlanetRow extends StatelessWidget {
 
       child: new InkWell(
 
-        onTap: () => launch(planet.telephone),
+        onTap: () => launch(kontak.telephone),
 
         child: new Container(
 
@@ -84,8 +84,8 @@ class PlanetRow extends StatelessWidget {
       ),
       child: new Stack(
         children: <Widget>[
-          planetCard,
-          planetThumbnail,
+          kontakCard,
+          kontakThumbnail,
         ],
       )
 
