@@ -9,6 +9,7 @@ dependencies:
   # flutter_youtube: "^1.1.4"   
   flutube: ^0.7.3
   flutter_uxcam: ^1.0.0
+  gradient_widgets: ^0.4.0
 
     
 
@@ -17,7 +18,6 @@ flutter:
   
   assets:
     - images/sibat.png
-    - images/wave.jpg
     - images/siklusbencana.jpg
     - images/iconPmi.png
     - images/iconDamkarGunungKidul.png

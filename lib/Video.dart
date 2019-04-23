@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutube/flutube.dart';
+import './textstyle.dart';
 
 class Video extends StatefulWidget {
   @override
@@ -10,6 +11,7 @@ class _VideoState extends State<Video> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      backgroundColor: const Color(0xff328df8),
       appBar: new AppBar(
         centerTitle: true,
         title: new Text(
@@ -27,7 +29,7 @@ class _VideoState extends State<Video> {
             children: <Widget>[
               Text(
                 'Prakata Kepala BPBD Gunung Kidul DIY untuk Tim SIBAT',
-                style: TextStyle(fontSize: 16.0),
+                style: Style.titleTextStyle,
                 textAlign: TextAlign.center,
               ),
 
@@ -40,7 +42,7 @@ class _VideoState extends State<Video> {
 
               Text(
                 'Dokumentasi Kegiatan dan Training Tim SIBAT',
-                style: TextStyle(fontSize: 16.0),
+                style: Style.titleTextStyle,
                 textAlign: TextAlign.center,
               ),
               FluTube(
@@ -52,7 +54,7 @@ class _VideoState extends State<Video> {
 
               Text(
                 'Simulasi Peringatan Dini Gempa dan Tsunami Televisi Indonesia',
-                style: TextStyle(fontSize: 16.0),
+                style: Style.titleTextStyle,
                 textAlign: TextAlign.center,
               ),
               FluTube(
@@ -64,7 +66,7 @@ class _VideoState extends State<Video> {
 
               Text(
                 'Peringatan Dini Bencana Tsunami – GITNEWS ',
-                style: TextStyle(fontSize: 16.0),
+                style: Style.titleTextStyle,
                 textAlign: TextAlign.center,
               ),
               FluTube(
@@ -76,7 +78,7 @@ class _VideoState extends State<Video> {
 
               Text(
                 'Prosedur Diseminasi Peringatan Dini Tsunami Pusdalops BPBD Kab. Bantul',
-                style: TextStyle(fontSize: 16.0),
+                style: Style.titleTextStyle,
                 textAlign: TextAlign.center,
               ),
               FluTube(
@@ -88,7 +90,7 @@ class _VideoState extends State<Video> {
 
               Text(
                 'Jangan Berenang Di Pantai Jika Melihat Ombak Seperti Ini',
-                style: TextStyle(fontSize: 16.0),
+                style: Style.titleTextStyle,
                 textAlign: TextAlign.center,
               ),
               FluTube(
@@ -100,7 +102,7 @@ class _VideoState extends State<Video> {
 
               Text(
                 '#1 Tsunami Preparedness',
-                style: TextStyle(fontSize: 16.0),
+                style: Style.titleTextStyle,
                 textAlign: TextAlign.center,
               ),
               FluTube(
@@ -112,7 +114,7 @@ class _VideoState extends State<Video> {
 
               Text(
                 '#2 Tsunami Early Warning System',
-                style: TextStyle(fontSize: 16.0),
+                style: Style.titleTextStyle,
                 textAlign: TextAlign.center,
               ),
               FluTube(
@@ -124,7 +126,7 @@ class _VideoState extends State<Video> {
 
               Text(
                 '#3 Tsunami Evacuation',
-                style: TextStyle(fontSize: 16.0),
+                style: Style.titleTextStyle,
                 textAlign: TextAlign.center,
               ),
               FluTube(
@@ -136,7 +138,7 @@ class _VideoState extends State<Video> {
 
               Text(
                 '#4 Tsunami Survival Strategy',
-                style: TextStyle(fontSize: 16.0),
+                style: Style.titleTextStyle,
                 textAlign: TextAlign.center,
               ),
               FluTube(

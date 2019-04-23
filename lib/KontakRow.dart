@@ -5,95 +5,85 @@ import './textstyle.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class KontakRow extends StatelessWidget {
-
   final Kontak kontak;
- 
+
   KontakRow(this.kontak);
 
   @override
   Widget build(BuildContext context) {
-
     final kontakThumbnail = new Container(
-     margin: new EdgeInsets.symmetric(
-       vertical: 16.0
-     ),
-     alignment: FractionalOffset.centerLeft,
-     child: new Image(
-       image: new AssetImage(kontak.image),
-       height: 92.0,
-       width: 92.0,
-    ),
-  );
+      margin: new EdgeInsets.symmetric(vertical: 16.0),
+      alignment: FractionalOffset.centerLeft,
+      child: new Image(
+        image: new AssetImage(kontak.image),
+        height: 92.0,
+        width: 92.0,
+      ),
+    );
 
-  final kontakCardContent = new Container(
+    final kontakCardContent = new Container(
       margin: new EdgeInsets.fromLTRB(76.0, 16.0, 16.0, 16.0),
       constraints: new BoxConstraints.expand(),
       child: new Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           new Container(height: 4.0),
-          new Text(kontak.name,
+          new Text(
+            kontak.name,
             style: Style.headerTextStyle,
           ),
           new Container(height: 10.0),
-          new Text(kontak.location,
-            style: Style.commonTextStyle
-
-          ),
+          new Text(kontak.location, style: Style.commonTextStyle),
           new Container(
-            margin: new EdgeInsets.symmetric(vertical: 8.0),
-            height: 2.0,
-            width: 18.0,
-            color: Colors.redAccent
+              margin: new EdgeInsets.symmetric(vertical: 8.0),
+              height: 2.0,
+              width: 18.0,
+              color: Colors.blueAccent),
+          new Text(
+            "Click to Call", 
+            style: TextStyle(
+              color: Colors.blueAccent,
+              fontSize: 14.0,
+              fontWeight: FontWeight.w400,
+            ),
           ),
         ],
       ),
     );
 
-  final kontakCard = new Container(
-    child: kontakCardContent,
-     height: 145.0,
-     margin: new EdgeInsets.only(left: 46.0),
-     decoration: new BoxDecoration(
-       color: Colors.black,
-       shape: BoxShape.rectangle,
-       borderRadius: new BorderRadius.circular(8.0),
-       boxShadow: <BoxShadow>[
-         new BoxShadow(  
-          color: Colors.black12,
-          blurRadius: 10.0,
-          offset: new Offset(10.0, 10.0),
-        ),
-      ],
-    ),
-  );
-
-
-    
-    return new Material(
-      color: Colors.blue,
-
-      child: new InkWell(
-
-        onTap: () => launch(kontak.telephone),
-
-        child: new Container(
-        color: Colors.transparent,
-        margin: const EdgeInsets.symmetric(
-        vertical: 16.0,
-        horizontal: 24.0,
-      ),
-      child: new Stack(
-        children: <Widget>[
-          kontakCard,
-          kontakThumbnail,
+    final kontakCard = new Container(
+      child: kontakCardContent,
+      height: 145.0,
+      margin: new EdgeInsets.only(left: 46.0),
+      decoration: new BoxDecoration(
+        color: Colors.black,
+        shape: BoxShape.rectangle,
+        borderRadius: new BorderRadius.circular(8.0),
+        boxShadow: <BoxShadow>[
+          new BoxShadow(
+            color: Colors.black12,
+            blurRadius: 10.0,
+            offset: new Offset(10.0, 10.0),
+          ),
         ],
-      )
-
-      )
-
-      )     
-
+      ),
     );
+
+    return new Material(
+        color: const Color(0xff328df8),
+        child: new InkWell(
+            onTap: () => launch(kontak.telephone),
+            child: new Container(
+                color: Colors.transparent,
+                margin: const EdgeInsets.symmetric(
+                  vertical: 16.0,
+                  horizontal: 24.0,
+                ),
+                child: new Stack(
+                  children: <Widget>[
+                    kontakCard,
+                    kontakThumbnail,
+                  ],
+                ))));
   }
 }
