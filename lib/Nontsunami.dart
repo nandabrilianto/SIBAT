@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
 import './textstyle.dart';
+import 'package:tweet_webview/tweet_webview.dart';
 
-class Nontsunami extends StatelessWidget{
+class Nontsunami extends StatefulWidget {
+  Nontsunami({Key key}) : super(key: key);
+
   @override
-  Widget build(BuildContext context){
-    return new Container(
-      child: new Center(
-        child: new Column(
-          children: <Widget>[
-            new Text("Berpotensi tsunami", style: Style.headerTextStyle,),
-            new Padding(padding: new EdgeInsets.all(20.0),),
-          ],
-        ),
-      ),
+  _NontsunamiState createState() => _NontsunamiState();
+}
+
+class _NontsunamiState extends State<Nontsunami> {
+  @override
+   Widget build(BuildContext context) {
+    return Scaffold(
+      // appBar: AppBar(
+      //   title: Text('Tweet WebView Example 1'),
+      // ),
+      body: TweetWebView.tweetID(
+          '1110597596437897216'),
     );
   }
 }

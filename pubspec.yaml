@@ -8,8 +8,10 @@ dependencies:
   flutter_map: 
   # flutter_youtube: "^1.1.4"   
   flutube: ^0.7.3
-  flutter_uxcam: ^1.0.0
+  # flutter_uxcam: ^1.0.0
   gradient_widgets: ^0.4.0
+  tweet_webview: ^0.2.1
+
 
     
 
