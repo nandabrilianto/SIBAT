@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import './textstyle.dart';
 import 'package:tweet_webview/tweet_webview.dart';
 
-class Tsunami extends StatefulWidget {
-  Tsunami({Key key}) : super(key: key);
+class Lainnya extends StatefulWidget {
+  Lainnya({Key key}) : super(key: key);
 
   @override
-  _TsunamiState createState() => _TsunamiState();
+  _LainnyaState createState() => _LainnyaState();
 }
 
-class _TsunamiState extends State<Tsunami> {
+class _LainnyaState extends State<Lainnya> {
   @override
    Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +20,7 @@ class _TsunamiState extends State<Tsunami> {
     );}
 
     Widget _buildBody() {
-    final tweets = ['1045616401891831808', '1026074760814374912', '1045835591319871489',];
+    final tweets = ['1085730010629980160', '1050610576064278528', '1050610378093125634',];
 
     final list = ListView.builder(
       scrollDirection: Axis.vertical,

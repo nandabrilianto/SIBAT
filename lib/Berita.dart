@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './Tsunami.dart' as tsunami;
 import './Nontsunami.dart' as nontsunami;
+import './Lainnya.dart' as lainnya;
 
 class Berita extends StatefulWidget {
   @override
@@ -11,7 +12,7 @@ class _BeritaState extends State<Berita> with SingleTickerProviderStateMixin {
   TabController controller;
   @override
   void initState() {
-    controller = new TabController(vsync: this, length: 2);
+    controller = new TabController(vsync: this, length: 3);
     // TODO: implement initState
     super.initState();
   }
@@ -36,18 +37,26 @@ class _BeritaState extends State<Berita> with SingleTickerProviderStateMixin {
           ),
           bottom: new TabBar(controller: controller, tabs: <Widget>[
             new Tab(
-              icon: new Text('Berpotensi tsunami'),
+              icon: new Text('Berpotensi tsunami',
+              textAlign: TextAlign.center),
             ),
             new Tab(
               icon: new Text('Tidak berpotensi tsunami',
                   textAlign: TextAlign.center),
+            ),
+
+            new Tab(
+              icon: new Text('Lainnya',
+                  textAlign: TextAlign.center),
             )
+
           ])),
       body: new TabBarView(
         controller: controller,
         children: <Widget>[
           new tsunami.Tsunami(),
           new nontsunami.Nontsunami(),
+          new lainnya.Lainnya(),
         ],
       ),
     );
