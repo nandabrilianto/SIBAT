@@ -1,45 +1,44 @@
 import 'package:flutter/material.dart';
 import './textstyle.dart';
 import 'package:tweet_webview/tweet_webview.dart';
+import 'package:http/http.dart' as http;
+import 'dart:async';
+import 'dart:convert';
 
 class Tsunami extends StatefulWidget {
-  Tsunami({Key key}) : super(key: key);
-
   @override
   _TsunamiState createState() => _TsunamiState();
 }
 
 class _TsunamiState extends State<Tsunami> {
+
+List dataTsunami;
+
+Future<String> getTsunamiData() async {
+  http.Response data = await http.get(Uri.encodeFull("http://207.148.71.247/get_data_tsunami.php")
+  );
+
+  this.setState((){
+    dataTsunami = jsonDecode(data.body);
+  });
+}
+
+@override
+  void initState() {
+    this.getTsunamiData();
+  }
+
+
   @override
-   Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text('Tweet WebView Example 1'),
-      // ),1110597596437897216
-       body: _buildBody(),
-    );}
+      body: new ListView.builder(
+        itemCount: dataTsunami == null ? 0 : dataTsunami.length,
+        itemBuilder: (context,index){
+          return new Card(child: TweetWebView.tweetID(dataTsunami[index]['tweet_id']),);
+        },
 
-    Widget _buildBody() {
-    final tweets = ['1045616401891831808', '1026074760814374912', '1045835591319871489',];
-
-    final list = ListView.builder(
-      scrollDirection: Axis.vertical,
-      padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
-      itemCount: tweets.length,
-      itemBuilder: (context, index) {
-        var tweetID = tweets[index];
-        return Card(
-          child: TweetWebView.tweetID(tweetID),
-        );
-      },
+      ),
     );
-
-    final container = Container(
-        color: Colors.black26,
-        child: Center(child: list)
-    );
-
-    return container;
-
   }
-  }
+}
