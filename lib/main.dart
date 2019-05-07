@@ -1,13 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import './HomePage.dart';
+import './Berita.dart';
 
 void main() {
   runApp(new MaterialApp(
     home: new SplashScreen(),
     routes: <String, WidgetBuilder>{
-      '/HomePage': (BuildContext context) => new HomePage()
+      '/Berita': (BuildContext context) => new Berita()
     },
   ));
 }
@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigationPage() {
-    Navigator.of(context).pushReplacementNamed('/HomePage');
+    Navigator.of(context).pushReplacementNamed('/Berita');
   }
 
   @override

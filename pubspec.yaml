@@ -11,10 +11,7 @@ dependencies:
   # flutter_uxcam: ^1.0.0
   gradient_widgets: ^0.4.0
   tweet_webview: ^0.2.1
-  flutter_launcher_icons: "^0.7.0"
-
-
-    
+  flutter_launcher_icons: "^0.7.0" 
 
 flutter:
   uses-material-design: true
@@ -27,10 +24,8 @@ flutter:
     - images/iconBPBDGunungKidul.png
     - images/iconSarGunungKidul.png
     - images/iconPemerintahGunungKidul.png
-
-
+  
 flutter_icons:
-  android: true 
+  android: "launcher_icon" 
   ios: true
-  image_path_android: "images/sibat.png"
-  image_path_ios: "images/sibat.png"
+  image_path: "images/sibat.png"
