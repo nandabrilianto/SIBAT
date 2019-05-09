@@ -242,27 +242,30 @@ class _PetaState extends State<Peta> {
                 future: mapDataList,
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.done) {
-                    for (MapData mapData in snapshot.data) {
-                      markerList.add(new Marker(
-                          width: 45.0,
-                          height: 45.0,
-                          point: new LatLng(double.parse(mapData.latitude),
-                              double.parse(mapData.longitude)),
-                          builder: (context) => new Container(
-                                child: IconButton(
-                                  icon: Icon(Icons.location_on),
-                                  color: Colors.blue,
-                                  iconSize: 45.0,
-                                  onPressed: () {
-                                    Route route = MaterialPageRoute(
-                                        builder: (context) => pageImage(
-                                              pointId: mapData.id,
-                                            ));
-                                    Navigator.push(context, route);
-                                  },
-                                ),
-                              )));
+                    if (snapshot.data != null) {
+                      for (MapData mapData in snapshot.data) {
+                        markerList.add(new Marker(
+                            width: 45.0,
+                            height: 45.0,
+                            point: new LatLng(double.parse(mapData.latitude),
+                                double.parse(mapData.longitude)),
+                            builder: (context) => new Container(
+                                  child: IconButton(
+                                    icon: Icon(Icons.location_on),
+                                    color: Colors.blue,
+                                    iconSize: 45.0,
+                                    onPressed: () {
+                                      Route route = MaterialPageRoute(
+                                          builder: (context) => pageImage(
+                                                pointId: mapData.id,
+                                              ));
+                                      Navigator.push(context, route);
+                                    },
+                                  ),
+                                )));
+                      }
                     }
+
                     return FlutterMap(
                         options: new MapOptions(
                             center: new LatLng(
