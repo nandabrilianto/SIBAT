@@ -10,12 +10,17 @@ class _MitigasiState extends State<Mitigasi> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      backgroundColor: const Color(0xff328df8),
+      backgroundColor: Colors.white,
       resizeToAvoidBottomPadding: false,
       appBar: new AppBar(
-        backgroundColor: Colors.blue,
-        // elevation: 0.0,
-        title: new Text(""),
+        title: new Text(
+          'Mitigasi Tsunami',
+          style: TextStyle(
+              fontFamily: 'Montserrat',
+              fontWeight: FontWeight.bold,
+              color: Colors.white),
+        ),
+        centerTitle: true,
       ),
       body: new Container(
           margin: EdgeInsets.symmetric(horizontal: 20.0),
@@ -24,13 +29,13 @@ class _MitigasiState extends State<Mitigasi> {
               constraints: new BoxConstraints(),
               child: new Column(
                 children: <Widget>[
+                  // new Text(
+                  //   "\nMitigasi Tsunami \n",
+                  //   textAlign: TextAlign.center,
+                  //   style: new TextStyle(fontSize: 46.0, fontFamily: 'Montserrat', letterSpacing: 1.0, fontWeight: FontWeight.bold, color: Colors.black),
+                  // ),
                   new Text(
-                    "\nMitigasi Tsunami \n",
-                    textAlign: TextAlign.center,
-                    style: new TextStyle(fontSize: 46.0, fontFamily: 'Montserrat', letterSpacing: 1.0, fontWeight: FontWeight.bold, color: Colors.white),
-                  ),
-                  new Text(
-                    "Mitigasi adalah segala tindakan yang dilakukan untuk mengurangi atau menghilangkan risiko jangka panjang bahaya bencana alam dan akibatnya terhadap manusia dan harta benda. Berdasarkan Peraturan Pemerintah (PP) No. 64 tahun 2010 Pasal 1 (4) yang dimaksud Mitigasi Bencana adalah upaya untuk mengurangi risiko bencana, baik secara struktur atau fisik melalui pembangunan fisik alami dan/atau buatan maupun nonstruktur atau nonfisik melalui peningkatan kemampuan menghadapi ancaman bencana di wilayah pesisir dan pulau – pulau kecil. \n",
+                    "\n\nMitigasi adalah segala tindakan yang dilakukan untuk mengurangi atau menghilangkan risiko jangka panjang bahaya bencana alam dan akibatnya terhadap manusia dan harta benda. Berdasarkan Peraturan Pemerintah (PP) No. 64 tahun 2010 Pasal 1 (4) yang dimaksud Mitigasi Bencana adalah upaya untuk mengurangi risiko bencana, baik secara struktur atau fisik melalui pembangunan fisik alami dan/atau buatan maupun nonstruktur atau nonfisik melalui peningkatan kemampuan menghadapi ancaman bencana di wilayah pesisir dan pulau – pulau kecil. \n",
                     textAlign: TextAlign.left,
                     style: Style.commonTextStyle,
                   ),
@@ -137,7 +142,7 @@ class _MitigasiState extends State<Mitigasi> {
                     style: Style.commonTextStyle,
                   ),
                   new Text(
-                    "\n4. Tahap pascabencana meliputi usaha rehabilitasi dan rekonstruksi sebagai upaya mengembalikan keadaan masyarakat pada situasi yang kondusif, sehat, dan layak sehingga masyarakat dapat hidup seperti sedia kala sebelum bencana tsunami terjadi, baik secara fisik dan psikologis.",
+                    "\n4. Tahap pascabencana meliputi usaha rehabilitasi dan rekonstruksi sebagai upaya mengembalikan keadaan masyarakat pada situasi yang kondusif, sehat, dan layak sehingga masyarakat dapat hidup seperti sedia kala sebelum bencana tsunami terjadi, baik secara fisik dan psikologis.\n",
                     style: Style.commonTextStyle,
                   ),
                 ],

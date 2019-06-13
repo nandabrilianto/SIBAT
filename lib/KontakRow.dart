@@ -70,7 +70,7 @@ class KontakRow extends StatelessWidget {
     );
 
     return new Material(
-        color: const Color(0xff328df8),
+        color: Colors.white,
         child: new InkWell(
             onTap: () => launch(kontak.telephone),
             child: new Container(

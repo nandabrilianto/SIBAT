@@ -11,7 +11,7 @@ class _VideoState extends State<Video> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      backgroundColor: const Color(0xff328df8),
+      backgroundColor: Colors.white,
       appBar: new AppBar(
         centerTitle: true,
         title: new Text(
@@ -23,12 +23,12 @@ class _VideoState extends State<Video> {
           ),
       ),
       body: new Container(
-        margin: EdgeInsets.all(20.0),
+        margin: EdgeInsets.symmetric(horizontal: 20.0),
         child: new SingleChildScrollView(
           child: new Column(
             children: <Widget>[
               Text(
-                'Prakata Kepala BPBD Gunung Kidul DIY untuk Tim SIBAT',
+                '\nPrakata Kepala BPBD Gunung Kidul DIY untuk Tim SIBAT',
                 style: Style.titleTextStyle,
                 textAlign: TextAlign.center,
               ),
@@ -41,7 +41,7 @@ class _VideoState extends State<Video> {
               ),
 
               Text(
-                'Dokumentasi Kegiatan dan Training Tim SIBAT',
+                '\nDokumentasi Kegiatan dan Training Tim SIBAT',
                 style: Style.titleTextStyle,
                 textAlign: TextAlign.center,
               ),
@@ -53,7 +53,7 @@ class _VideoState extends State<Video> {
               ),
 
               Text(
-                'Simulasi Peringatan Dini Gempa dan Tsunami Televisi Indonesia',
+                '\nSimulasi Peringatan Dini Gempa dan Tsunami Televisi Indonesia',
                 style: Style.titleTextStyle,
                 textAlign: TextAlign.center,
               ),
@@ -65,7 +65,7 @@ class _VideoState extends State<Video> {
               ),
 
               Text(
-                'Peringatan Dini Bencana Tsunami – GITNEWS ',
+                '\nPeringatan Dini Bencana Tsunami – GITNEWS ',
                 style: Style.titleTextStyle,
                 textAlign: TextAlign.center,
               ),
@@ -77,7 +77,7 @@ class _VideoState extends State<Video> {
               ),
 
               Text(
-                'Prosedur Diseminasi Peringatan Dini Tsunami Pusdalops BPBD Kab. Bantul',
+                '\nProsedur Diseminasi Peringatan Dini Tsunami Pusdalops BPBD Kab. Bantul',
                 style: Style.titleTextStyle,
                 textAlign: TextAlign.center,
               ),
@@ -89,7 +89,7 @@ class _VideoState extends State<Video> {
               ),
 
               Text(
-                'Jangan Berenang Di Pantai Jika Melihat Ombak Seperti Ini',
+                '\nJangan Berenang Di Pantai Jika Melihat Ombak Seperti Ini',
                 style: Style.titleTextStyle,
                 textAlign: TextAlign.center,
               ),
@@ -101,7 +101,7 @@ class _VideoState extends State<Video> {
               ),
 
               Text(
-                '#1 Tsunami Preparedness',
+                '\n#1 Tsunami Preparedness',
                 style: Style.titleTextStyle,
                 textAlign: TextAlign.center,
               ),
@@ -113,7 +113,7 @@ class _VideoState extends State<Video> {
               ),
 
               Text(
-                '#2 Tsunami Early Warning System',
+                '\n#2 Tsunami Early Warning System',
                 style: Style.titleTextStyle,
                 textAlign: TextAlign.center,
               ),
@@ -125,7 +125,7 @@ class _VideoState extends State<Video> {
               ),
 
               Text(
-                '#3 Tsunami Evacuation',
+                '\n#3 Tsunami Evacuation',
                 style: Style.titleTextStyle,
                 textAlign: TextAlign.center,
               ),
@@ -137,7 +137,7 @@ class _VideoState extends State<Video> {
               ),
 
               Text(
-                '#4 Tsunami Survival Strategy',
+                '\n#4 Tsunami Survival Strategy',
                 style: Style.titleTextStyle,
                 textAlign: TextAlign.center,
               ),

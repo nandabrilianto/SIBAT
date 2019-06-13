@@ -47,17 +47,23 @@ class _pageImageState extends State<pageImage> {
     });
   }
 
-void _nextImage(){
-  setState(() {
-   photoIndex =photoIndex < imageCount - 1 ? photoIndex + 1 : photoIndex;
-  });
-}
+  void _nextImage() {
+    setState(() {
+      photoIndex = photoIndex < imageCount - 1 ? photoIndex + 1 : photoIndex;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('Gambar'),
+        title: new Text(
+          'Gambar',
+          style: TextStyle(
+              fontFamily: 'Montserrat',
+              fontWeight: FontWeight.bold,
+              color: Colors.white),
+        ),
         centerTitle: true,
       ),
       body: Column(
@@ -68,34 +74,34 @@ void _nextImage(){
                   future: imageList,
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.done) {
-                      imageCount =snapshot.data.length;
+                      imageCount = snapshot.data.length;
                       for (LocationImage locationImage in snapshot.data) {
                         imageUrlList.add(baseImageUrl +
-                                          correctImageName(
-                                              locationImage.image));
+                            correctImageName(locationImage.image));
                       }
                       return Stack(
-                          children: <Widget>[
-                            Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(25.0),
-                                  image: DecorationImage(
-                                      image: NetworkImage(imageUrlList[photoIndex]),
-                                      fit: BoxFit.cover)),
-                              height: 400.0,
-                              width: 300.0,
+                        children: <Widget>[
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25.0),
+                                image: DecorationImage(
+                                    image:
+                                        NetworkImage(imageUrlList[photoIndex]),
+                                    fit: BoxFit.cover)),
+                            height: 400.0,
+                            width: 300.0,
+                          ),
+                          Positioned(
+                            top: 375.0,
+                            left: 25.0,
+                            right: 25.0,
+                            child: selectedPhoto(
+                              numberOfDots: snapshot.data.length,
+                              photoIndex: photoIndex,
                             ),
-                            Positioned(
-                              top: 375.0,
-                              left: 25.0,
-                              right: 25.0,
-                              child: selectedPhoto(
-                                numberOfDots: snapshot.data.length,
-                                photoIndex: photoIndex,
-                              ),
-                            )
-                          ],
-                        );
+                          )
+                        ],
+                      );
                     }
                     return CircularProgressIndicator();
                   })),
@@ -103,14 +109,20 @@ void _nextImage(){
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               RaisedButton(
-                child: Text('Mundur', style: TextStyle(color: Colors.white),),
+                child: Text(
+                  'Mundur',
+                  style: TextStyle(color: Colors.white),
+                ),
                 onPressed: _previousImage,
                 elevation: 5.0,
                 color: Colors.blue,
               ),
               SizedBox(width: 10.0),
               RaisedButton(
-                child: Text('Maju', style: TextStyle(color: Colors.white),),
+                child: Text(
+                  'Maju',
+                  style: TextStyle(color: Colors.white),
+                ),
                 onPressed: _nextImage,
                 elevation: 5.0,
                 color: Colors.blue,
