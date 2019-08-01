@@ -4,6 +4,7 @@ import 'package:tweet_webview/tweet_webview.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
+import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 
 class Lainnya extends StatefulWidget {
   @override
@@ -11,33 +12,47 @@ class Lainnya extends StatefulWidget {
 }
 
 class _LainnyaState extends State<Lainnya> {
+  List dataTsunami = [];
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey =
+      GlobalKey<RefreshIndicatorState>();
 
-List dataTsunami;
-
-Future<String> getTsunamiData() async {
-  http.Response data = await http.get(Uri.encodeFull("http://207.148.71.247/get_data_lainnya.php")
-  );
-
-  this.setState((){
-    dataTsunami = jsonDecode(data.body);
-  });
-}
-
-@override
-  void initState() {
-    this.getTsunamiData();
+  Future<String> getTsunamiData() async {
+    http.Response data = await http
+        .get(Uri.encodeFull("http://207.148.71.247/get_data_lainnya.php"));
+    return data.body;
   }
 
+  @override
+  void initState() {
+    super.initState();
+    _handleRefresh();
+  }
+
+  Future<void> _handleRefresh() async{
+    String body = await getTsunamiData();  
+    setState(() {
+      dataTsunami = jsonDecode(body);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: new ListView.builder(
-        itemCount: dataTsunami == null ? 0 : dataTsunami.length,
-        itemBuilder: (context,index){
-          return new Card(child: TweetWebView.tweetID(dataTsunami[index]['tweet_id']),);
-        },
-
+      body: LiquidPullToRefresh(
+        showChildOpacityTransition: false,
+        key: _refreshIndicatorKey,
+        onRefresh: _handleRefresh,
+        child: ListView.builder(
+          key: Key('list-view-lainnya'),
+          itemCount: dataTsunami.length,
+          itemBuilder: (context, index) {
+            return Card(
+              key: Key(dataTsunami[index]['tweet_id'].toString()),
+              child: TweetWebView.tweetID(dataTsunami[index]['tweet_id']),
+            );
+          },
+        ),
       ),
     );
   }
