@@ -8,6 +8,7 @@ import './Tahapanevakuasi.dart';
 import './Laporkan.dart';
 import './Video.dart';
 import './Peta.dart';
+import './About.dart';
 
 class Berita extends StatefulWidget {
   @override
@@ -73,7 +74,7 @@ class _BeritaState extends State<Berita> with SingleTickerProviderStateMixin {
                     style: TextStyle(
                       fontFamily: 'Montserrat',
                       color: Colors.white,
-                      fontSize: 16.0,
+                      fontSize: 14.0,
                       fontWeight: FontWeight.bold,
                     )),
               ),
@@ -83,7 +84,7 @@ class _BeritaState extends State<Berita> with SingleTickerProviderStateMixin {
                   style: TextStyle(
                     fontFamily: 'Montserrat',
                     color: Colors.white,
-                    fontSize: 16.0,
+                    fontSize: 14.0,
                   ),
                 ),
                 leading: new Icon(
@@ -92,7 +93,7 @@ class _BeritaState extends State<Berita> with SingleTickerProviderStateMixin {
                 ),
                 selected: true,
                 contentPadding:
-                    EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                    EdgeInsets.symmetric(vertical: 8.0, horizontal: 14.0),
                 onTap: () {
                   Route route = MaterialPageRoute(builder: (context) => Peta());
                   Navigator.push(context, route);
@@ -105,7 +106,7 @@ class _BeritaState extends State<Berita> with SingleTickerProviderStateMixin {
                   style: TextStyle(
                     fontFamily: 'Montserrat',
                     color: Colors.white,
-                    fontSize: 16.0,
+                    fontSize: 14.0,
                   ),
                 ),
                 leading: new Icon(
@@ -114,7 +115,7 @@ class _BeritaState extends State<Berita> with SingleTickerProviderStateMixin {
                 ),
                 selected: true,
                 contentPadding:
-                    EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                    EdgeInsets.symmetric(vertical: 8.0, horizontal: 14.0),
                 onTap: () {
                   Route route =
                       MaterialPageRoute(builder: (context) => Mitigasi());
@@ -128,7 +129,7 @@ class _BeritaState extends State<Berita> with SingleTickerProviderStateMixin {
                   style: TextStyle(
                     fontFamily: 'Montserrat',
                     color: Colors.white,
-                    fontSize: 16.0,
+                    fontSize: 14.0,
                   ),
                 ),
                 leading: new Icon(
@@ -137,7 +138,7 @@ class _BeritaState extends State<Berita> with SingleTickerProviderStateMixin {
                 ),
                 selected: true,
                 contentPadding:
-                    EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                    EdgeInsets.symmetric(vertical: 8.0, horizontal: 14.0),
                 onTap: () {
                   Route route = MaterialPageRoute(
                       builder: (context) => Tahapanevakuasi());
@@ -151,7 +152,7 @@ class _BeritaState extends State<Berita> with SingleTickerProviderStateMixin {
                   style: TextStyle(
                     fontFamily: 'Montserrat',
                     color: Colors.white,
-                    fontSize: 16.0,
+                    fontSize: 14.0,
                   ),
                 ),
                 leading: new Icon(
@@ -160,30 +161,23 @@ class _BeritaState extends State<Berita> with SingleTickerProviderStateMixin {
                 ),
                 selected: true,
                 contentPadding:
-                    EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                    EdgeInsets.symmetric(vertical: 8.0, horizontal: 14.0),
                 onTap: () {
                   Route route =
                       MaterialPageRoute(builder: (context) => Laporkan());
                   Navigator.push(context, route);
                 },
               ),
-              // new Divider(),
-              // new ListTile(
-              //   title: new Text("Info"),
-              //   leading: new Icon(Icons.info),
-              //   onTap: () {
-              //     Route route = MaterialPageRoute(builder: (context) => Info());
-              //     Navigator.push(context, route);
-              //   },
-              // ),
+
               // new Divider(color: Colors.white,),
+
               new ListTile(
                 title: new Text(
                   "Video",
                   style: TextStyle(
                     fontFamily: 'Montserrat',
                     color: Colors.white,
-                    fontSize: 16.0,
+                    fontSize: 14.0,
                   ),
                 ),
                 leading: new Icon(
@@ -192,13 +186,33 @@ class _BeritaState extends State<Berita> with SingleTickerProviderStateMixin {
                 ),
                 selected: true,
                 contentPadding:
-                    EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                    EdgeInsets.symmetric(vertical: 8.0, horizontal: 14.0),
                 onTap: () {
                   Route route =
                       MaterialPageRoute(builder: (context) => Video());
                   Navigator.push(context, route);
+                },),
+
+                //  new Divider(color: Colors.white,),
+              
+              new ListTile(
+                title: new Text("Tentang",
+                style: TextStyle(
+                    fontFamily: 'Montserrat',
+                    color: Colors.white,
+                    fontSize: 14.0,
+                  ),),
+                leading: new Icon(Icons.info,
+                color: Colors.white,),
+                selected: true,
+                contentPadding:
+                EdgeInsets.symmetric(vertical: 8.0, horizontal: 14.0),
+                onTap: () {
+                  Route route = MaterialPageRoute(builder: (context) => About());
+                  Navigator.push(context, route);
                 },
               ),
+              
               // new Divider( color: Colors.white,),
               // new ListTile(
               //   title: new Text(

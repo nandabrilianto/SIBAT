@@ -6,7 +6,7 @@ import 'package:latlong/latlong.dart';
 import './Mitigasi.dart';
 import './Tahapanevakuasi.dart';
 import './Laporkan.dart';
-import './Info.dart';
+import './About.dart';
 import './Video.dart';
 import './Berita.dart';
 import './pageImage.dart';
