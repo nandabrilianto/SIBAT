@@ -14,7 +14,7 @@ class _AboutState extends State<About> {
       resizeToAvoidBottomPadding: false,
       appBar: new AppBar(
         title: new Text(
-          'Mitigasi Tsunami',
+          'Tentang',
           style: TextStyle(
               fontFamily: 'Montserrat',
               fontWeight: FontWeight.bold,
