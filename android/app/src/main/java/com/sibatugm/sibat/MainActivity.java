@@ -1,4 +1,4 @@
-package com.cumulations.flutteruisplashscreen;
+package com.sibatugm.sibat;
 
 import android.os.Bundle;
 
