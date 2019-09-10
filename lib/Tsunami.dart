@@ -19,7 +19,7 @@ class _TsunamiState extends State<Tsunami> {
 
   Future<String> getTsunamiData() async {
     http.Response data = await http
-        .get(Uri.encodeFull("http://207.148.71.247/get_data_tsunami.php"));
+        .get(Uri.encodeFull("http://116.12.54.83/get_data_tsunami.php"));
     return data.body;
   }
 
